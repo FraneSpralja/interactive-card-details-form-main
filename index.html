@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="assets/style.css">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <main>
+    <section id="card_img">
+      <div class="container_card">
+        <div class="container_card--front">
+          <div class="card_front--up">
+            <span class="card_up--logo"></span>
+            <span class="card_up--logo"></span>
+          </div>
+          <div class="card_front--down">
+            <div class="card_dow--numberSerie">
+              <span>0000 0000 0000 0000</span>
+            </div>
+            <div class="card_down--finalData">
+              <span class="card_name">
+                Frane Spralja
+              </span>
+              <span class="card_date">
+                00/00
+              </span>
+            </div>
+          </div>
+        </div>
+        <div  class="container_card--back">
+          <div class="card_back--down">
+            <div class="card_back--down--authNumber">
+              <span>
+                123
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="validation_form">
+      <form id="form">
+        <div class="form_box">
+          <label>Cardholder Name</label>
+          <input id="name">
+        </div>
+        <div class="form_box">
+          <label>Card Number</label>
+          <input id="number">
+        </div>
+        <div class="form_box">
+          <label>Exp. Date (MM/YY)</label>
+          <input id="month">
+          <input id="year">
+        </div>
+        <div class="form_box">
+          <label>cvc</label>
+          <input id="cvc">
+        </div>
+      </form>
+      <button type="submit">Confirm</button>
+    </section>
+  </main>
+
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </footer>
+</body>
+</html>
