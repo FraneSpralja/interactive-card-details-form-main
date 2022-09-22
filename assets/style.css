@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+}
+
 main {
     display: flex;
     height: 100vh;
@@ -13,6 +18,59 @@ section#card_img {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    flex: 0 0 25%;
+}
+
+.container_card {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.container_card--front {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 30vh;
+    background-image: url(.././images/bg-card-front.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    top: 15%;
+    left: 30%;
+    flex: 1 1 100%;
+    max-width: 79vw;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+}
+
+.container_card--back {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 30vh;
+    background-image: url(.././images/bg-card-back.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    top: 50%;
+    left: 45%;
+    flex: 1 1 100%;
+    max-width: 79vw;
+}
+
+section#validation_form {
+    margin: auto;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #353535;
+    padding: 15px;
 }
 
 
@@ -29,39 +87,17 @@ section#card_img {
         height: 25%;
     }
 
-    .container_card {
-        display: flex;
-        flex-flow: column;
-        width: 100%;
-        height: 100%;
-        position: relative;
-    }
-
     .container_card--front {
-        position: absolute;
-        z-index: 1;
-        width: 100%;
         height: 20vh;
-        background-image: url(.././images/bg-card-front.png);
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
         top: 55%;
-        flex: 1 1 100%;
-        max-width: 79vw;
+        left: inherit;
     }
 
     .container_card--back {
-        position: absolute;
-        z-index: 0;
-        width: 100%;
         height: 20vh;
-        background-image: url(.././images/bg-card-back.png);
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
         top: 10%;
         right: 0;
-        flex: 1 1 100%;
-        max-width: 79vw;
+        left: inherit;
     }
 
     .card_back--down {
@@ -78,6 +114,129 @@ section#card_img {
 
     .card_back--down--authNumber span {
         font-size: 12px;
-        color: #fff;
+        color: hsl(270, 3%, 87%);
+    }
+
+    .card_front--up {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+    }
+
+    span.card_up--logo:first-of-type {
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        display: block;
+        border-radius: 50%;
+    }
+
+    span.card_up--logo:last-of-type {
+        width: 10px;
+        height: 10px;
+        border: 1px solid #fff;
+        display: inline-block;
+        border-radius: 50%;
+    }
+
+    .card_front--down {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        row-gap: 5px;
+    }
+
+    .card_dow--numberSerie {
+        letter-spacing: 1px;
+        color: hsl(270, 3%, 87%);
+        width: 100%;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .card_down--finalData {
+        width: 83%;
+        display: flex;
+        padding: 0 20px;
+        justify-content: space-between;
+        font-size: 10px;
+        color: hsl(270, 3%, 87%);
+        text-transform: uppercase;
+    }
+
+    section#validation_form {
+        padding: .5em 15px 10px;
+        margin: auto;
+    }
+
+    form#form {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        row-gap: 15px;
+    }
+
+    .form_box {
+        flex: 0 0 100%;
+        display: flex;
+        flex-flow: column;
+        row-gap: 10px;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .form_box:last-of-type, .form_box:nth-of-type(3) {
+        max-width: 47%;
+        align-self: flex-start;
+    }
+
+    .form_box:nth-of-type(3) {
+        flex-flow: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .form_box > input {
+        width: 93%;
+        padding: 7px 12px;
+        border-radius: 7px;
+        border: 1px solid hsl(270, 3%, 87%);
+        font-size: 18px;
+        font-family: 'Space Grotesk';
+    }
+
+    .form_box > input::placeholder {
+        color: hsl(270, 3%, 87%);
+        font-size: 18px;
+        font-family: 'Space Grotesk';
+    }
+
+    .form_box:nth-of-type(3) > input {
+        flex: 0 0 32%;
+        max-width: 32%;
+    }
+
+    .form_box:last-of-type > input {
+        width: 86%;
+    }
+
+    .form_box > label {
+        text-transform: uppercase;
+        color: hsl(278, 68%, 11%)
+    }
+
+    section#validation_form > button {
+        width: 100%;
+        padding: 12px;
+        border-radius: 9px;
+        background: hsl(278, 68%, 11%);
+        font-family: 'Space Grotesk';
+        color: hsl(270, 3%, 87%);
+        font-size: 18px;
     }
 }
