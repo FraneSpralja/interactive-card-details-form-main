@@ -190,7 +190,7 @@ form#form {
     color: hsl(278, 68%, 11%)
 }
 
-section#validation_form > button {
+form#form > button {
     width: 100%;
     padding: 12px;
     border-radius: 9px;
@@ -198,6 +198,7 @@ section#validation_form > button {
     font-family: 'Space Grotesk';
     color: hsl(270, 3%, 87%);
     font-size: 18px;
+    cursor: pointer;
 }
 
 footer {
@@ -207,6 +208,10 @@ footer {
     right: 0;
     background-color: #353535;
     padding: 15px;
+}
+
+.val-error {
+    border: 1px solid hsl(0, 100%, 66%) !important;
 }
 
 
