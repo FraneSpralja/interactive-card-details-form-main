@@ -9,10 +9,23 @@ const cvcInput = document.querySelector('#cvc');
 const regexNum = /[1-9]/g;
 const regexLetter = /[a-z]/gi
 
+const cardObj = {
+    serialNumber: '',
+    name: '',
+    date: '',
+    cvc: ''
+}
+
 // EVENT LISTENER
 eventListener()
 
 function eventListener() {
+
+    printDataOnCard(nameInput)
+    printDataOnCard(numberInput)
+    printDataOnCard(monthInput)
+    printDataOnCard(yearInput)
+    printDataOnCard(cvcInput)
     
     formulario.addEventListener('submit', (e) => {
         e.preventDefault()
@@ -21,10 +34,18 @@ function eventListener() {
         
         nameInput.addEventListener('focus', validationName(regexLetter, nameInput));
         numberInput.addEventListener('focus', validationNumber(regexNum, numberInput));
-        monthInput.addEventListener('focus', validationNumber(regexNum, monthInput));
-        yearInput.addEventListener('focus', validationNumber(regexNum, yearInput));
         cvcInput.addEventListener('focus', validationNumber(regexNum, cvcInput));
 
+        printDataOnCard(nameInput)
+        printDataOnCard(numberInput)
+        printDataOnCard(monthInput)
+        printDataOnCard(yearInput)
+        printDataOnCard(cvcInput)
+
+        setTimeout(() => {
+            formulario.remove()
+            cardDetailsAdded()
+        }, 2000)
 
     })
 }
@@ -68,6 +89,64 @@ function formValidation() {
     }
 }
 
+function printDataOnCard(input) {
+    const numberSerie = document.querySelector('.card_down--numberSerie');
+    const cardName = document.querySelector('.card_name');
+    const cardMonth = document.querySelector('.card_date--month');
+    const cardYear = document.querySelector('.card_date--year');
+    const cardCvc = document.querySelector('.card_back--down--authNumber > span')
+
+    input.addEventListener('input', () => {
+        if(input.id === 'name') {
+            cardName.textContent = input.value;
+        } else if(input.id === 'number') {
+            if(input.value == ''){
+                cardNumber.textContent = '0000 0000 0000 0000'
+            }
+            const cardNumber = input.value.split('');
+            cardNumber.splice(4, 0, ' ');
+            cardNumber.splice(9, 0, ' ');
+            cardNumber.splice(14, 0, ' ');
+            numberSerie.textContent = cardNumber.join('');
+        } else if(input.id === 'month'){
+            cardMonth.textContent = input.value;
+        } else if(input.id === 'year') {
+            cardYear.textContent = input.value;
+        } else if(input.id === 'cvc') {
+            cardCvc.textContent = input.value;
+        }
+    })
+}
+
+function cardDetailsAdded() {
+    const validationForm = document.querySelector('#validation_form');
+
+    const complete = document.createElement('div');
+    complete.classList.add('thanxs_box');
+
+    const checkImg = document.createElement('img');
+    checkImg.src = '../images/icon-complete.svg'
+    
+    const thanxTitle = document.createElement('h3');
+    thanxTitle.textContent = 'THANK YOU!';
+
+    const thanxSpan = document.createElement('span');
+    thanxSpan.textContent = "We've added your card details";
+
+    const thanxButton = document.createElement('button');
+    thanxButton.classList.add('btn-continue');
+    thanxButton.textContent = 'Continue'
+    thanxButton.onclick = function() {
+        location.reload()
+    }
+
+    complete.appendChild(checkImg);
+    complete.appendChild(thanxTitle);
+    complete.appendChild(thanxSpan);
+    complete.appendChild(thanxButton);
+
+    validationForm.appendChild(complete)
+}
 
 function printMesagge(msg, input, type) {
     const formBox = document.querySelectorAll('.form_box')

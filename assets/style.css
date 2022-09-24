@@ -112,7 +112,7 @@ span.card_up--logo:last-of-type {
     margin-right: auto;
 }
 
-.card_dow--numberSerie {
+.card_down--numberSerie {
     letter-spacing: 1px;
     color: hsl(270, 3%, 87%);
     width: 100%;
@@ -190,7 +190,7 @@ form#form {
     color: hsl(278, 68%, 11%)
 }
 
-form#form > button {
+form#form > button, .btn-continue {
     width: 100%;
     padding: 12px;
     border-radius: 9px;
@@ -217,6 +217,32 @@ footer {
 p.message {
     font-size: 15px;
     color: hsl(0, 100%, 66%);
+}
+
+.thanxs_box {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    row-gap: 15px;
+}
+
+.thanxs_box img {
+    width: 15%;
+}
+
+.thanxs_box h3 {
+    font-size: 35px;
+    color: hsl(278, 68%, 11%);
+    margin-top: 15px;
+}
+
+.thanxs_box span {
+    color: hsl(279, 6%, 55%);
+}
+
+.btn-continue {
+    width: 60%;
+    margin-top: 20px;
 }
 
 @media (max-width:751px) {
@@ -284,5 +310,13 @@ p.message {
         padding: 15px;
         flex: 0 0 auto;
         max-width: 100%;
+    }
+
+    .thanxs_box img {
+        width: 40%;
+    }
+
+    .btn-continue {
+        width: 100%;
     }
 }

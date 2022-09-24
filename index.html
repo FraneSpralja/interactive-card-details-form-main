@@ -28,7 +28,7 @@
             <span class="card_up--logo"></span>
           </div>
           <div class="card_front--down">
-            <div class="card_dow--numberSerie">
+            <div class="card_down--numberSerie">
               <span>0000 0000 0000 0000</span>
             </div>
             <div class="card_down--finalData">
@@ -36,7 +36,9 @@
                 Frane Spralja
               </span>
               <span class="card_date">
-                00/00
+                <span class="card_date--month">00</span>
+                /
+                <span class="card_date--year">00</span>
               </span>
             </div>
           </div>
@@ -60,16 +62,16 @@
         </div>
         <div class="form_box">
           <label>Card Number</label>
-          <input id="number" placeholder="e.g. 1234 5678 9123 0000">
+          <input id="number" placeholder="e.g. 1234 5678 9123 0000" maxlength="16">
         </div>
         <div class="form_box">
           <label>Exp. Date (MM/YY)</label>
-          <input id="month" placeholder="MM">
-          <input id="year" placeholder="YY">
+          <input id="month" placeholder="MM" maxlength="2">
+          <input id="year" placeholder="YY" maxlength="2">
         </div>
         <div class="form_box">
           <label>cvc</label>
-          <input id="cvc" placeholder="e.g. 123">
+          <input id="cvc" placeholder="e.g. 123" maxlength="3">
         </div>
         <button type="submit">Confirm</button>
       </form>
