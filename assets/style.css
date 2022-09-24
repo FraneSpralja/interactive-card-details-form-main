@@ -214,6 +214,10 @@ footer {
     border: 1px solid hsl(0, 100%, 66%) !important;
 }
 
+p.message {
+    font-size: 15px;
+    color: hsl(0, 100%, 66%);
+}
 
 @media (max-width:751px) {
     main {
